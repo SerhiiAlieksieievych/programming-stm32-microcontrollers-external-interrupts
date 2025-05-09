@@ -74,6 +74,7 @@ void NMI_Handler(void)
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
    while (1)
   {
+
   }
   /* USER CODE END NonMaskableInt_IRQn 1 */
 }
@@ -208,7 +209,10 @@ void EXTI0_IRQHandler(void)
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
-
+	for(int i = 0; i < 10; i++){
+		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+		for(uint32_t i=0; i < 1000000; i++);
+	}
   /* USER CODE END EXTI0_IRQn 1 */
 }
 
@@ -222,7 +226,10 @@ void EXTI1_IRQHandler(void)
   /* USER CODE END EXTI1_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
   /* USER CODE BEGIN EXTI1_IRQn 1 */
-
+	for(int i = 0; i < 10; i++){
+		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+		for(uint32_t i=0; i < 2000000; i++);
+  }
   /* USER CODE END EXTI1_IRQn 1 */
 }
 
